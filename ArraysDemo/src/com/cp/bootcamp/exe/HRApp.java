@@ -32,8 +32,10 @@ public class HRApp {
 
 			case 2: hrapp.searchEmployeeById();
 			break;
+
 			case 3: hrapp.updateEmployeeSalary();
 			break;
+
 			case 4: hrapp.displayEmployees();
 			break;
 
@@ -81,15 +83,12 @@ public class HRApp {
 
 
 	public void displayEmployees()
-	{ try {
+	{
 		Employee[] emps = operations.getAllEmployess();
-		for(int i=0;i<emps.length;i++) {
+		for(int i=0;i<operations.getIndex();i++) {
 			displayEmployeeDetails(emps[i]);	
+			System.out.println();
 		}
-	}
-	catch (Exception e) {
-		System.out.println("Add Employees first");
-	}
 	}
 
 
@@ -101,7 +100,14 @@ public class HRApp {
 		sc.nextLine();
 		String project =  sc.nextLine();
 
-		System.out.println(operations.updateEmployeeById(project,x));
+		Employee[] arr1 = operations.updateEmployeeSalByProject(project,x);
+		for (int i = 0; i < operations.getIndex(); i++) {
+			if(arr1[i].getProject().equals(project))
+			{
+				displayEmployeeDetails(arr1[i]);	
+				System.out.println();
+			}
+		}
 	}
 
 

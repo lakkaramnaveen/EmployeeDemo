@@ -4,7 +4,11 @@ import com.cp.bootcamp.bean.Employee;
 
 public class EmployeeOperations {
 	Employee arr[] = new Employee[100];
-	static int index = 0;
+	private static int index = 0;
+	
+	public static int getIndex() {
+		return index;
+	}
 
 	public boolean addEmployee(Employee e)
 	{
@@ -29,18 +33,17 @@ public class EmployeeOperations {
 		return arr;
 	}
 
-	public Employee updateEmployeeById(String project,int x)
+	public Employee[] updateEmployeeSalByProject(String project,int x)
 	{
 		for (int i = 0; i < index; i++) {
 			if(arr[i].getProject().equals(project))
 			{
 				int updatedSal = arr[i].getSalary();
 				updatedSal= (int)(updatedSal + ((updatedSal*x)/100));
-				arr[i].setSalary(updatedSal);
-				return arr[i];
+				arr[i].setSalary(updatedSal);	
 			}
 		}
-		return null;
+		return arr;
 	}
 
 }
