@@ -95,10 +95,12 @@ public class HRApp {
 	
 	public void updateEmployeeSalary()
 	{
-		System.out.println("Enter Employee project ");
-		String project =  sc.nextLine();
 		System.out.println("Enter the percentage");
 		int x = sc.nextInt();
+		System.out.println("Enter Employee project ");
+		sc.nextLine();
+		String project =  sc.nextLine();
+		
 		Employee e = new Employee(project);
 		
 		System.out.println(operations.updateEmployeeById(e,x));
