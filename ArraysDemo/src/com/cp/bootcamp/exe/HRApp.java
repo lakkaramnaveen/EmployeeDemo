@@ -101,9 +101,7 @@ public class HRApp {
 		sc.nextLine();
 		String project =  sc.nextLine();
 
-		Employee e = new Employee(project);
-
-		System.out.println(operations.updateEmployeeById(e,x));
+		System.out.println(operations.updateEmployeeById(project,x));
 	}
 
 

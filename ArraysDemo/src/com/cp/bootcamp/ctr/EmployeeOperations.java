@@ -29,10 +29,10 @@ public class EmployeeOperations {
 		return arr;
 	}
 
-	public Employee updateEmployeeById(Employee e,int x)
+	public Employee updateEmployeeById(String project,int x)
 	{
 		for (int i = 0; i < index; i++) {
-			if(arr[i].getProject().equals(e.getProject()))
+			if(arr[i].getProject().equals(project))
 			{
 				int updatedSal = arr[i].getSalary();
 				updatedSal= (int)(updatedSal + ((updatedSal*x)/100));
