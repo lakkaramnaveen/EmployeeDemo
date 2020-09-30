@@ -97,10 +97,11 @@ public class HRApp {
 	{
 		System.out.println("Enter Employee project ");
 		String project =  sc.nextLine();
-
+		System.out.println("Enter the percentage");
+		int x = sc.nextInt();
 		Employee e = new Employee(project);
 		
-		System.out.println(operations.updateEmployeeById(e));
+		System.out.println(operations.updateEmployeeById(e,x));
 	}
 	
 

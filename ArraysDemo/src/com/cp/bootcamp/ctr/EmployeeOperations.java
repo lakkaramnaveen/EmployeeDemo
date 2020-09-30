@@ -29,13 +29,13 @@ public class EmployeeOperations {
 		return arr;
 	}
 	
-	public Employee updateEmployeeById(Employee e)
+	public Employee updateEmployeeById(Employee e,int x)
 	{
 		for (int i = 0; i < index; i++) {
 			if(arr[i].getProject().equals(e.getProject()))
 			{
 				int updatedSal = arr[i].getSalary();
-				updatedSal= (int)(updatedSal + (updatedSal*0.1));
+				updatedSal= (int)(updatedSal + ((updatedSal*x)/100));
 				arr[i].setSalary(updatedSal);
 				return arr[i];
 			}
