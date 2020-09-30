@@ -5,13 +5,13 @@ import com.cp.bootcamp.bean.Employee;
 public class EmployeeOperations {
 	Employee arr[] = new Employee[100];
 	static int index = 0;
-	
+
 	public boolean addEmployee(Employee e)
 	{
 		arr[index++] = e;
 		return true;
 	}
-	
+
 	public Employee getEmployeeById(int id)
 	{
 		Employee e = null;
@@ -23,12 +23,12 @@ public class EmployeeOperations {
 		}
 		return e;
 	}
-	
+
 	public Employee[] getAllEmployess()
 	{
 		return arr;
 	}
-	
+
 	public Employee updateEmployeeById(Employee e,int x)
 	{
 		for (int i = 0; i < index; i++) {

@@ -9,10 +9,10 @@ public class HRApp {
 
 	Scanner sc = new Scanner(System.in);
 	EmployeeOperations operations = new EmployeeOperations();
-	
+
 	public static void main(String[] args) {
 		HRApp hrapp = new HRApp();
-		
+
 		while(true)
 		{
 			System.out.println(" === MENU ====");
@@ -21,30 +21,30 @@ public class HRApp {
 			System.out.println("3. Update Employee Salary By Project"); // increase the salary of employee by x% (given by user) working on same project
 			System.out.println("4. Display All Employees");
 			System.out.println("0. Exit");
-			
+
 			System.out.println("Enter Your Choice ");
 			int choice = Integer.parseInt(hrapp.sc.nextLine());
-			
+
 			switch(choice)
 			{
-				case 1: hrapp.createNewEmployee();
-				break;
-				
-				case 2: hrapp.searchEmployeeById();
-				break;
-				case 3: hrapp.updateEmployeeSalary();
-				break;
-				case 4: hrapp.displayEmployees();
-				break;
-				
-				case 0: System.exit(0);
+			case 1: hrapp.createNewEmployee();
+			break;
+
+			case 2: hrapp.searchEmployeeById();
+			break;
+			case 3: hrapp.updateEmployeeSalary();
+			break;
+			case 4: hrapp.displayEmployees();
+			break;
+
+			case 0: System.exit(0);
 			}
-			
+
 		}//end while
-		
-		
+
+
 	}//end main
-	
+
 	public void createNewEmployee()
 	{
 		System.out.println("Enter Name ");
@@ -57,42 +57,42 @@ public class HRApp {
 		String project = sc.nextLine();
 
 		Employee e = new Employee(code, empName, salary, project);
-		
+
 		operations.addEmployee(e);
 	}
-	
+
 	public void searchEmployeeById()
 	{
 		System.out.println("Enter Code ");
 		int code = Integer.parseInt(sc.nextLine());
-		
+
 		Employee e = operations.getEmployeeById(code);
 		displayEmployeeDetails(e);
 	}
-	
+
 	public void displayEmployeeDetails(Employee e)
 	{
 		System.out.println(" Employee Name "+e.getName());
 		System.out.println(" Employee Code "+e.getCode());
 		System.out.println(" Employee Project "+e.getProject());
 		System.out.println(" Employee Salary "+e.getSalary());
-		
+
 	}
-	
-	
+
+
 	public void displayEmployees()
 	{ try {
 		Employee[] emps = operations.getAllEmployess();
 		for(int i=0;i<emps.length;i++) {
 			displayEmployeeDetails(emps[i]);	
 		}
-		}
+	}
 	catch (Exception e) {
 		System.out.println("Add Employees first");
 	}
 	}
-	
-	
+
+
 	public void updateEmployeeSalary()
 	{
 		System.out.println("Enter the percentage");
@@ -100,11 +100,11 @@ public class HRApp {
 		System.out.println("Enter Employee project ");
 		sc.nextLine();
 		String project =  sc.nextLine();
-		
+
 		Employee e = new Employee(project);
-		
+
 		System.out.println(operations.updateEmployeeById(e,x));
 	}
-	
+
 
 }
