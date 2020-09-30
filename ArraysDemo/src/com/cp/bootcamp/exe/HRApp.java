@@ -78,6 +78,7 @@ public class HRApp {
 		System.out.println(" Employee Code "+e.getCode());
 		System.out.println(" Employee Project "+e.getProject());
 		System.out.println(" Employee Salary "+e.getSalary());
+		System.out.println();
 
 	}
 
@@ -87,7 +88,6 @@ public class HRApp {
 		Employee[] emps = operations.getAllEmployess();
 		for(int i=0;i<operations.getIndex();i++) {
 			displayEmployeeDetails(emps[i]);	
-			System.out.println();
 		}
 	}
 
@@ -105,7 +105,6 @@ public class HRApp {
 			if(arr1[i].getProject().equals(project))
 			{
 				displayEmployeeDetails(arr1[i]);	
-				System.out.println();
 			}
 		}
 	}
